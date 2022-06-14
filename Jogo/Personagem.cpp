@@ -27,16 +27,16 @@ Personagem::~Personagem()
 void Personagem::Update()
 {
     if (window->KeyDown(VK_LEFT) and x > 0)
-        x -= velX * gameTime;
+        Translate(-velX * gameTime, 0);
 
     if (window->KeyDown(VK_RIGHT) and x < (window->Width() - sprite->Width()))
-        x += velX * gameTime;
+        Translate(velX * gameTime, 0);
 
     if (window->KeyDown(VK_UP) and y > 0)
-        y -= velY * gameTime;
+        Translate(0, -velY * gameTime);
 
     if (window->KeyDown(VK_DOWN) and y < (window->Height() - sprite->Height()))
-        y += velY * gameTime;
+        Translate(0, velY * gameTime);
 
 }
 
