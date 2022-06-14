@@ -15,10 +15,6 @@ class Jogo : public Game
 private:
     Sprite* backg = nullptr;
 
-    Image  * logoImg = nullptr;
-    Sprite * logo1   = nullptr;
-    Sprite * logo2   = nullptr;
-
     //objetos
     Personagem* perso = nullptr;
 
@@ -33,10 +29,6 @@ public:
 void Jogo::Init()
 {
     backg = new Sprite("Resources/Background.jpg");
-
-    logoImg = new Image("Resources/Logo.png");
-    logo1 = new Sprite(logoImg);
-    logo2 = new Sprite(logoImg);
 
     perso = new Personagem();
 }
@@ -55,8 +47,6 @@ void Jogo::Update()
 void Jogo::Draw()
 {
     backg->Draw(0.0f, 0.0f, Layer::BACK);
-    logo1->Draw(40.0f, 60.0f, Layer::UPPER);
-    logo2->Draw(400.0f, 450.0f, Layer::LOWER);
 
     perso->Draw();
 }
@@ -66,11 +56,6 @@ void Jogo::Finalize()
 {
     // remove sprites da mem�ria
     delete backg;
-    delete logo1;
-    delete logo2;
-
-    // remove imagem da mem�ria
-    delete logoImg;
 
     //deleta objeto
     delete perso;
