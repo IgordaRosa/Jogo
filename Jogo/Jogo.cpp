@@ -10,18 +10,18 @@
 #include "Menu.h"
 
 //objetos
+#include "Scene.h"
 #include "Personagem.h"
+#include "Background_F1.h"
 
 //////////////////////////////////////////////////////////////////////////
 class Jogo : public Game
 {
 private:
-    Sprite* back0 = nullptr;
-
     //menu
     Menu* menu = nullptr;
-    //objetos
-    Personagem* perso = nullptr;
+    //lista de objetos
+    static Scene* scene;
 
 public:
     void Init();
@@ -31,39 +31,48 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
+
+Scene* Jogo::scene = nullptr;
+
+//////////////////////////////////////////////////////////////////////////
 void Jogo::Init()
 {
-    back0 = new Sprite("Resources/Fases/back0.png");
+    scene = new Scene();
 
     menu = new Menu();
 
-    perso = new Personagem();
+    //adicionar objetos a lista
+    scene->Add(new Personagem());
+    scene->Add(new Background_F1());
 }
 
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Update()
 {
+    //verifica interações de key com o menu
     menu->KeyInteract();
 
-    perso->Update();
+    //atualiza todos os objetos da lista
+    scene->Update();
+
 } 
 
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Draw()
 {
-    back0->Draw(0.0f, 0.0f, Layer::BACK, 0.7f);
+    //desenha os objetos da lista
+    scene->Draw();
 
-    perso->Draw();
 }
 
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Finalize()
 {
-    // remove sprites da mem�ria
-    delete back0;
+    //deleta o menu
+    delete menu;
 
-    //deleta objeto
-    delete perso;
+    //deleta lista de objetos, e todos os seus objetos
+    delete scene;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -78,7 +87,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     engine->window->Size(1280, 720);
     // fullscreen
     //engine->window->Mode(FULLSCREEN);
-    //engine->window->HideCursor(true);
+    engine->window->HideCursor(true);
     //////////////////////////////////
     engine->window->Color(0, 0, 0);
     engine->window->Title("Jogo");

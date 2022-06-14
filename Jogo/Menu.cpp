@@ -29,7 +29,7 @@ void Menu::KeyInteract()
     //cursor
     if (window->KeyDown(VK_RETURN) and !apertouEnter)
     {
-        window->HideCursor(!cursor); 
+        window->HideCursor(cursor); 
         cursor = !cursor;
         apertouEnter = true;
     }

@@ -48,6 +48,12 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Jogo\Menu</Filter>
     </ClCompile>
+    <ClCompile Include="Background_F1.cpp">
+      <Filter>Jogo\Fases</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Jogo\Cenas</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -91,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="Menu.h">
       <Filter>Jogo\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="Background_F1.h">
+      <Filter>Jogo\Fases</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Jogo\Cenas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +162,9 @@
     </Filter>
     <Filter Include="Jogo\Menu">
       <UniqueIdentifier>{a75fcdcc-fa4a-4069-9ff8-1d038b1580e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo\Fases">
+      <UniqueIdentifier>{084ff758-0173-4c59-9bab-7a0380970935}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -160,6 +160,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background_F1.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Jogo.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -175,6 +177,7 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background_F1.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
@@ -184,6 +187,7 @@
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Resources.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />

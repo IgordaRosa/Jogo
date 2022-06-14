@@ -1,21 +1,20 @@
 //////////////////////////////////////////////////////////////////////////
-
-#ifndef PERSONAGEM
-#define PERSONAGEM
+#ifndef BACKGROUND
+#define BACKGROUND
 
 #include "Types.h"
 #include "Object.h"
 #include "Sprite.h"
 
 //////////////////////////////////////////////////////////////////////////
-class Personagem : public Object
+class Background_F1 : public Object
 {
 private:
     Sprite* sprite;
 
 public:
-    Personagem();
-    ~Personagem();
+    Background_F1();
+    ~Background_F1();
 
     void Update();
     void Draw();
