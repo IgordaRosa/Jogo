@@ -6,18 +6,21 @@
 #include "Sprite.h"
 #include "Resources.h"
 
+//objetos
+#include "Personagem.h"
+
 //////////////////////////////////////////////////////////////////////////
 class SpriteDemo : public Game
 {
 private:
-    Sprite * backg   = nullptr;            // sprite do fundo de tela
-    Sprite * shank   = nullptr;            // sprite do personagem 
+    Sprite* backg = nullptr;
 
-    Image  * logoImg = nullptr;            // imagem do logotipo
-    Sprite * logo1   = nullptr;            // sprite 1 do logotipo
-    Sprite * logo2   = nullptr;            // sprite 2 do logotipo
+    Image  * logoImg = nullptr;
+    Sprite * logo1   = nullptr;
+    Sprite * logo2   = nullptr;
 
-    float x = 0, y = 0;                    // posi��o x,y do shank
+    //objetos
+    Personagem* perso = nullptr;
 
 public:
     void Init();
@@ -30,14 +33,12 @@ public:
 void SpriteDemo::Init()
 {
     backg = new Sprite("Resources/Background.jpg");
-    shank = new Sprite("Resources/Personagem.png");
 
     logoImg = new Image("Resources/Logo.png");
     logo1 = new Sprite(logoImg);
     logo2 = new Sprite(logoImg);
 
-    x = 80.0f;
-    y = 90.0f;
+    perso = new Personagem();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -47,24 +48,17 @@ void SpriteDemo::Update()
     if (window->KeyDown(VK_ESCAPE))
         window->Close();
 
-    // desloca personagem
-    if (window->KeyDown(VK_LEFT))
-        x -= 50.0f * gameTime;
-    if (window->KeyDown(VK_RIGHT))
-        x += 50.0f * gameTime;
-    if (window->KeyDown(VK_UP))
-        y -= 50.0f * gameTime;
-    if (window->KeyDown(VK_DOWN))
-        y += 50.0f * gameTime;
+    perso->Update();
 } 
 
 //////////////////////////////////////////////////////////////////////////
 void SpriteDemo::Draw()
 {
     backg->Draw(0.0f, 0.0f, Layer::BACK);
-    shank->Draw(x, y);
     logo1->Draw(40.0f, 60.0f, Layer::UPPER);
     logo2->Draw(400.0f, 450.0f, Layer::LOWER);
+
+    perso->Draw();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -72,12 +66,14 @@ void SpriteDemo::Finalize()
 {
     // remove sprites da mem�ria
     delete backg;
-    delete shank;
     delete logo1;
     delete logo2;
 
     // remove imagem da mem�ria
     delete logoImg;
+
+    //deleta objeto
+    delete perso;
 }
 
 //////////////////////////////////////////////////////////////////////////

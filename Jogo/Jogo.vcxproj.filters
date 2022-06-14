@@ -39,6 +39,12 @@
     <ClCompile Include="Jogo.cpp">
       <Filter>Jogo</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Personagem.cpp">
+      <Filter>Jogo\Personagem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -73,6 +79,12 @@
     </ClInclude>
     <ClInclude Include="Types.h">
       <Filter>Engine\Outros</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Personagem.h">
+      <Filter>Jogo\Personagem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -120,6 +132,12 @@
     </Filter>
     <Filter Include="Jogo">
       <UniqueIdentifier>{ef592285-5786-4943-8801-c0426be59e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Object">
+      <UniqueIdentifier>{9652aa41-e31f-44d5-9049-7862eab1a844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo\Personagem">
+      <UniqueIdentifier>{62ba5744-630e-43ef-ac2e-41a61ab68fb4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
