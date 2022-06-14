@@ -10,7 +10,7 @@
 #include "Personagem.h"
 
 //////////////////////////////////////////////////////////////////////////
-class SpriteDemo : public Game
+class Jogo : public Game
 {
 private:
     Sprite* backg = nullptr;
@@ -30,7 +30,7 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-void SpriteDemo::Init()
+void Jogo::Init()
 {
     backg = new Sprite("Resources/Background.jpg");
 
@@ -42,7 +42,7 @@ void SpriteDemo::Init()
 }
 
 //////////////////////////////////////////////////////////////////////////
-void SpriteDemo::Update()
+void Jogo::Update()
 {
     // sai com o pressionar do ESC
     if (window->KeyDown(VK_ESCAPE))
@@ -52,7 +52,7 @@ void SpriteDemo::Update()
 } 
 
 //////////////////////////////////////////////////////////////////////////
-void SpriteDemo::Draw()
+void Jogo::Draw()
 {
     backg->Draw(0.0f, 0.0f, Layer::BACK);
     logo1->Draw(40.0f, 60.0f, Layer::UPPER);
@@ -62,7 +62,7 @@ void SpriteDemo::Draw()
 }
 
 //////////////////////////////////////////////////////////////////////////
-void SpriteDemo::Finalize()
+void Jogo::Finalize()
 {
     // remove sprites da mem�ria
     delete backg;
@@ -95,7 +95,7 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     engine->graphics->VSync(true);
 
     // inicia o jogo
-    int status = engine->Start(new SpriteDemo());
+    int status = engine->Start(new Jogo());
 
     // destr�i o motor e o jogo
     delete engine;
