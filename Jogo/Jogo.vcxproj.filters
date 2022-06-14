@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <FxCompile Include="Vertex.hlsl">
+      <Filter>Engine\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Pixel.hlsl">
+      <Filter>Engine\Shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Window.cpp">
+      <Filter>Engine\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Engine\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Engine\Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Engine\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Engine\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Engine\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Jogo.cpp">
+      <Filter>Jogo</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Window.h">
+      <Filter>Engine\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Engine\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Engine\Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Engine\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Engine\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Recursos</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Engine\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Types.h">
+      <Filter>Engine\Outros</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{7a2cf5ad-6c4a-4df9-b434-465cf66510b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Window">
+      <UniqueIdentifier>{55f597c0-dfd8-4c8b-8245-17daa7f6bb7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Shader">
+      <UniqueIdentifier>{92167ce9-c550-42d9-8fef-4c2aa558d72f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Sprite">
+      <UniqueIdentifier>{870f28f6-c4a9-4752-b6ed-13a4d2555211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Timer">
+      <UniqueIdentifier>{0a1d31e1-674b-410d-9880-897c21302674}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Engine">
+      <UniqueIdentifier>{6dc5a830-4a41-4c8f-a40f-7a240e43d890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Game">
+      <UniqueIdentifier>{9fb23649-490b-43b3-bdf0-d8d91f462ff5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Graphics">
+      <UniqueIdentifier>{9af5f999-88c1-479c-866e-e04674833ee2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Image">
+      <UniqueIdentifier>{de60fd3e-80ac-4e8d-a66e-2098604028a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Renderer">
+      <UniqueIdentifier>{f1f18781-75a6-4ee4-8018-d86af19352dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos">
+      <UniqueIdentifier>{1f570ed7-a654-4c9c-9c93-2b25908544b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Recursos\Arquivos">
+      <UniqueIdentifier>{7c70a066-bb61-4157-880a-e11a12bb02a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Texture">
+      <UniqueIdentifier>{62d66014-7cce-44ae-afd0-f852fb6c7780}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Outros">
+      <UniqueIdentifier>{87322081-5a8b-4f6a-b128-e5891ff59e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo">
+      <UniqueIdentifier>{ef592285-5786-4943-8801-c0426be59e2d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resources.rc">
+      <Filter>Recursos</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Background.jpg">
+      <Filter>Recursos\Arquivos</Filter>
+    </Image>
+    <Image Include="Resources\Icon.ico">
+      <Filter>Recursos\Arquivos</Filter>
+    </Image>
+    <Image Include="Resources\Logo.png">
+      <Filter>Recursos\Arquivos</Filter>
+    </Image>
+    <Image Include="Resources\Personagem.png">
+      <Filter>Recursos\Arquivos</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cursor.cur">
+      <Filter>Recursos\Arquivos</Filter>
+    </None>
+    <None Include="Resources\Thumbs.db">
+      <Filter>Recursos\Arquivos</Filter>
+    </None>
+  </ItemGroup>
+</Project>
