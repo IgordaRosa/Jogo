@@ -45,6 +45,9 @@
     <ClCompile Include="Personagem.cpp">
       <Filter>Jogo\Personagem</Filter>
     </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Jogo\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="Personagem.h">
       <Filter>Jogo\Personagem</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Jogo\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +145,12 @@
     <Filter Include="Jogo\Personagem">
       <UniqueIdentifier>{62ba5744-630e-43ef-ac2e-41a61ab68fb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Jogo\Cenas">
+      <UniqueIdentifier>{cab2a925-7765-42b4-a3b5-91c09ee7a5b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo\Menu">
+      <UniqueIdentifier>{a75fcdcc-fa4a-4069-9ff8-1d038b1580e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resources.rc">
@@ -146,9 +158,6 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Background.jpg">
-      <Filter>Recursos\Arquivos</Filter>
-    </Image>
     <Image Include="Resources\Icon.ico">
       <Filter>Recursos\Arquivos</Filter>
     </Image>
@@ -156,6 +165,9 @@
       <Filter>Recursos\Arquivos</Filter>
     </Image>
     <Image Include="Resources\Personagem.png">
+      <Filter>Recursos\Arquivos</Filter>
+    </Image>
+    <Image Include="Resources\Fases\back0.png">
       <Filter>Recursos\Arquivos</Filter>
     </Image>
   </ItemGroup>

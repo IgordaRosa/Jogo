@@ -41,15 +41,16 @@ Sprite::~Sprite()
 }
 
 //////////////////////////////////////////////////////////////////////////
-void Sprite::Draw(float x, float y, float z)
+void Sprite::Draw(float x, float y, float z, float scale)
 {
     sprite.x = x;
     sprite.y = y;
-    sprite.scale = 1.0f;
+    sprite.scale = scale;
     sprite.depth = z;
     sprite.rotation = 0.0f;
     sprite.width = image->Width();
     sprite.height = image->Height();
+    
 
     // adiciona o sprite na lista de desenho
     Engine::renderer->Draw(&sprite);

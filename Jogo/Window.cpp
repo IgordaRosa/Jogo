@@ -84,6 +84,15 @@ bool Window::Create()
     if (!RegisterClassEx(&wndClass))
         return false;
 
+    // se fullscreen, cria com a resolução nativa da tela
+    if (FULLSCREEN)
+    {
+        windowPosX = 0;
+        windowPosY = 0;
+        windowWidth = GetSystemMetrics(SM_CXSCREEN);
+        windowHeight = GetSystemMetrics(SM_CYSCREEN);
+    }
+
     // criando uma janela baseada na classe "GameWindow" 
     windowHandle = CreateWindowEx(
         NULL,                           // estilos extras

@@ -164,6 +164,7 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Image.cpp" />
+    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Personagem.cpp" />
     <ClCompile Include="Renderer.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="Menu.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Personagem.h" />
     <ClInclude Include="Renderer.h" />
@@ -222,7 +224,7 @@
     <ResourceCompile Include="Resources.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Resources\Background.jpg" />
+    <Image Include="Resources\Fases\back0.png" />
     <Image Include="Resources\Icon.ico" />
     <Image Include="Resources\Logo.png" />
     <Image Include="Resources\Personagem.png" />

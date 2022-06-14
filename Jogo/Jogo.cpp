@@ -6,6 +6,9 @@
 #include "Sprite.h"
 #include "Resources.h"
 
+//menu
+#include "Menu.h"
+
 //objetos
 #include "Personagem.h"
 
@@ -13,8 +16,10 @@
 class Jogo : public Game
 {
 private:
-    Sprite* backg = nullptr;
+    Sprite* back0 = nullptr;
 
+    //menu
+    Menu* menu = nullptr;
     //objetos
     Personagem* perso = nullptr;
 
@@ -28,7 +33,9 @@ public:
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Init()
 {
-    backg = new Sprite("Resources/Background.jpg");
+    back0 = new Sprite("Resources/Fases/back0.png");
+
+    menu = new Menu();
 
     perso = new Personagem();
 }
@@ -36,9 +43,7 @@ void Jogo::Init()
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Update()
 {
-    // sai com o pressionar do ESC
-    if (window->KeyDown(VK_ESCAPE))
-        window->Close();
+    menu->KeyInteract();
 
     perso->Update();
 } 
@@ -46,7 +51,7 @@ void Jogo::Update()
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Draw()
 {
-    backg->Draw(0.0f, 0.0f, Layer::BACK);
+    back0->Draw(0.0f, 0.0f, Layer::BACK, 0.7f);
 
     perso->Draw();
 }
@@ -55,7 +60,7 @@ void Jogo::Draw()
 void Jogo::Finalize()
 {
     // remove sprites da mem�ria
-    delete backg;
+    delete back0;
 
     //deleta objeto
     delete perso;
@@ -71,6 +76,10 @@ int APIENTRY WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance,
     // configura janela
     engine->window->Mode(WINDOWED);
     engine->window->Size(1280, 720);
+    // fullscreen
+    //engine->window->Mode(FULLSCREEN);
+    //engine->window->HideCursor(true);
+    //////////////////////////////////
     engine->window->Color(0, 0, 0);
     engine->window->Title("Jogo");
     engine->window->Icon(IDI_ICON);

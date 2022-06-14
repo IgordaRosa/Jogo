@@ -46,7 +46,7 @@ public:
     int Height();                   // altura do sprite
 
     // desenha imagem na posi��o (x,y) e profundidade (z)
-    void Draw(float x, float y, float z = Layer::MIDDLE);
+    void Draw(float x, float y, float z = Layer::MIDDLE, float scale = 1.0f);
 };
 
 //////////////////////////////////////////////////////////////////////////
