@@ -52,7 +52,7 @@
       <Filter>Jogo\Fases</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>Jogo\Cenas</Filter>
+      <Filter>Engine\Cenas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,7 +102,7 @@
       <Filter>Jogo\Fases</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>Jogo\Cenas</Filter>
+      <Filter>Engine\Cenas</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -157,14 +157,14 @@
     <Filter Include="Jogo\Personagem">
       <UniqueIdentifier>{62ba5744-630e-43ef-ac2e-41a61ab68fb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Jogo\Cenas">
-      <UniqueIdentifier>{cab2a925-7765-42b4-a3b5-91c09ee7a5b1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Jogo\Menu">
       <UniqueIdentifier>{a75fcdcc-fa4a-4069-9ff8-1d038b1580e4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Jogo\Fases">
       <UniqueIdentifier>{084ff758-0173-4c59-9bab-7a0380970935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Cenas">
+      <UniqueIdentifier>{cab2a925-7765-42b4-a3b5-91c09ee7a5b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
