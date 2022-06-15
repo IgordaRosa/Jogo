@@ -3,10 +3,13 @@
 #include "Background_F1.h"
 
 //////////////////////////////////////////////////////////////////////////
-Background_F1::Background_F1()
+Background_F1::Background_F1(Personagem* perso)
 {
+    personagem = perso;
     sprite = new Sprite("Resources/Fases/back0.png");
-    MoveTo(0.0f, 0.0f, Layer::BACK);
+    MoveTo(0.0f, -50.0f, Layer::BACK);
+
+    velX = personagem->velX * 0.8f;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -18,13 +21,18 @@ Background_F1::~Background_F1()
 //////////////////////////////////////////////////////////////////////////
 void Background_F1::Update()
 {
-    
+    if (window->KeyDown(VK_LEFT) and x < -10)
+        Translate(velX * gameTime, 0);
+
+    if (window->KeyDown(VK_RIGHT) and x >= window->Width() - sprite->Width() + 10)
+        Translate(-velX * gameTime, 0);
+
 }
 
 //////////////////////////////////////////////////////////////////////////
 void Background_F1::Draw()
 {
-    sprite->Draw(x, y, z, 0.7f);
+    sprite->Draw(x, y, z, 1.0f);
 }
 
 //////////////////////////////////////////////////////////////////////////

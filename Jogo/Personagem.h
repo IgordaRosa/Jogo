@@ -13,10 +13,10 @@ class Personagem : public Object
 private:
     Sprite* sprite;
 
+public:
     float velX;
     float velY;
 
-public:
     Personagem();
     ~Personagem();
 

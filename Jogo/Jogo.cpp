@@ -22,6 +22,7 @@ private:
     Menu* menu = nullptr;
     //lista de objetos
     static Scene* scene;
+    Personagem* personagem = nullptr;
 
 public:
     void Init();
@@ -42,8 +43,9 @@ void Jogo::Init()
     menu = new Menu();
 
     //adicionar objetos a lista
-    scene->Add(new Personagem());
-    scene->Add(new Background_F1());
+    personagem = new Personagem();
+    scene->Add(personagem);
+    scene->Add(new Background_F1(personagem));
 }
 
 //////////////////////////////////////////////////////////////////////////

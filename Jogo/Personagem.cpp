@@ -8,8 +8,8 @@ Personagem::Personagem()
     sprite = new Sprite("Resources/Personagem.png");
     MoveTo
     (
-        float(window->CenterX() - (sprite->Width() /2.0f)), 
-        float(window->CenterY() - (sprite->Height() / 2.0f)),
+        100.0f,//float(window->CenterX() - (sprite->Width() /2.0f)), 
+        float(window->CenterY() - (sprite->Height() / 2.0f)) + 200.0f,
         Layer::MIDDLE
     );
 
@@ -37,6 +37,7 @@ void Personagem::Update()
 
     if (window->KeyDown(VK_DOWN) and y < (window->Height() - sprite->Height()))
         Translate(0, velY * gameTime);
+
 
 }
 
