@@ -1,35 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
 
-#include "Engine.h"
-#include "Game.h"
-#include "Image.h"
-#include "Sprite.h"
-#include "Resources.h"
-
-//menu
-#include "Menu.h"
-
-//objetos
-#include "Scene.h"
-#include "Personagem.h"
-#include "Background_F1.h"
-
-//////////////////////////////////////////////////////////////////////////
-class Jogo : public Game
-{
-private:
-    //menu
-    Menu* menu = nullptr;
-    //lista de objetos
-    static Scene* scene;
-    Personagem* personagem = nullptr;
-
-public:
-    void Init();
-    void Update();
-    void Draw();
-    void Finalize();
-};
+#include "Jogo.h"
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -40,23 +11,26 @@ void Jogo::Init()
 {
     scene = new Scene();
 
-    menu = new Menu();
-
+    //carregar imagens
+    
     //adicionar objetos a lista
     personagem = new Personagem();
-    scene->Add(personagem);
-    scene->Add(new Background_F1(personagem));
+    scene->Add(personagem, RECTANGLE_T);
+    
 }
 
 //////////////////////////////////////////////////////////////////////////
 void Jogo::Update()
 {
     //verifica interações de key com o menu
-    menu->KeyInteract();
+    if (window->KeyDown(VK_ESCAPE))
+        window->Close();
 
     //atualiza todos os objetos da lista
     scene->Update();
 
+    //detecção e resolução de colisão
+    scene->CollisionDetection();
 } 
 
 //////////////////////////////////////////////////////////////////////////
@@ -71,7 +45,6 @@ void Jogo::Draw()
 void Jogo::Finalize()
 {
     //deleta o menu
-    delete menu;
 
     //deleta lista de objetos, e todos os seus objetos
     delete scene;

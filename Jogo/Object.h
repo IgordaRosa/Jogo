@@ -7,25 +7,55 @@
 
 #include "Types.h"                  // usando os tipos personalizados da engine
 #include "Window.h"                 // janela usada para o jogo
+#include "Geometry.h"
+#include "Game.h"
 
 //////////////////////////////////////////////////////////////////////////
 class Object
 {
-public:
-    static Window*& window;        // janela do jogo 
-    static float& gameTime;      // tempo do último quadro
-    float x, y, z;                  // coordenadas do objeto 
+private:
+    float posX, posY, posZ;     // coordenadas do objeto
+    Geometry* bbox;             // bounding box do objeto
+
+protected:
+    static Window*& window;    // janela do jogo
+    static Game*& game;        // jogo em que o objeto está inserido
+    static float& gameTime;    // tempo do último quadro
+
+    const float& x = posX;     // coordenada x do objeto
+    const float& y = posY;     // coordenada y do objeto
+    const float& z = posZ;     // coordenada z do objeto
+
+    uint type;                  // tipo do objeto
 
 public:
-    Object();                       // construtor padrão
-    virtual ~Object();              // destrutor virtual
+    Object();                   // construtor
+    virtual ~Object();          // destrutor virtual
 
-    // ------------------------
+    // ------------------------------------------------
     // funções virtuais    
-    // ------------------------
+    // ------------------------------------------------
     // podem ser sobrescritas na classe derivada
     // e chamadas corretamente mesmo usando um
     // ponteiro para a classe base
+
+    // retorna coordenada x do objeto
+    virtual float X() const;
+
+    // retorna coordenada y do objeto
+    virtual float Y() const;
+
+    // retorna coordenada z do objeto
+    virtual float Z() const;
+
+    // retorna tipo do objeto
+    virtual uint Type() const;
+
+    // muda a bounding box do objeto
+    virtual void BBox(Geometry* bb);
+
+    // retorna a bounding box do objeto
+    virtual Geometry* BBox() const;
 
     // move o objeto por (deltaX, deltaY, deltaZ)
     virtual void Translate(float dx, float dy, float dz = 0.0f);
@@ -36,10 +66,14 @@ public:
     // move o objeto para as coordenadas (x,y) indicadas
     virtual void MoveTo(float px, float py);
 
-    // ------------------------
-    // funções virtuais puras    
-    // ------------------------     
-    // devem ser obrigatoriamente sobrescritas na classe derivada
+    // faz a resolução de colisão do objeto
+    virtual void OnCollision(Object* obj);
+
+    // ------------------------------------------------
+    // funções virtuais pura    
+    // ------------------------------------------------    
+    // devem ser sobrescritas na classe derivada
+    // fazem com que a classe seja abstrata
 
     // atualiza estado do objeto
     virtual void Update() = 0;
@@ -49,22 +83,34 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-// move o objeto por (deltaX, deltaY, deltaZ)
-inline void Object::Translate(float dx, float dy, float dz)
+// retorna coordenada x do objeto
+inline float Object::X() const
 {
-    x += dx; y += dy; z += dz;
+    return posX;
 }
 
-// move o objeto para as coordenadas (x,y,z) indicadas
-inline void Object::MoveTo(float px, float py, float pz)
+// retorna coordenada y do objeto
+inline float Object::Y() const
 {
-    x = px; y = py; z = pz;
+    return posY;
 }
 
-// move o objeto para as coordenadas (x,y) indicadas
-inline void Object::MoveTo(float px, float py)
+// retorna coordenada z do objeto
+inline float Object::Z() const
 {
-    x = px; y = py;
+    return posY;
+}
+
+// retorna tipo do objeto
+inline uint Object::Type() const
+{
+    return type;
+}
+
+// retorna a bounding box do objeto
+inline Geometry* Object::BBox() const
+{
+    return bbox;
 }
 
 //////////////////////////////////////////////////////////////////////////

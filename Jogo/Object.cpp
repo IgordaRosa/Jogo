@@ -5,16 +5,79 @@
 
 //////////////////////////////////////////////////////////////////////////
 
-Window*& Object::window = Engine::window;           // ponteiro para a janela
-float& Object::gameTime = Engine::frameTime;        // tempo do último quadro
+Window*& Object::window = Engine::window;        // ponteiro para a janela
+Game*& Object::game = Engine::game;          // ponteiro para o jogo
+float& Object::gameTime = Engine::frameTime;     // tempo do último quadro
 
 //////////////////////////////////////////////////////////////////////////
-Object::Object() : x(0.0f), y(0.0f), z(0.5f)
+Object::Object()
 {
+    // posição do objeto
+    posX = posY = 0.0f;
+
+    // profundidade do objeto
+    posZ = 0.5f;
+
+    //tipo do objeto
+    type = 0;
+
+    // bounding box do objeto
+    bbox = nullptr;
 }
 
 //////////////////////////////////////////////////////////////////////////
 Object::~Object()
 {
+    if (bbox)
+        delete bbox;
 }
+
 //////////////////////////////////////////////////////////////////////////
+void Object::BBox(Geometry* bb)
+{
+    if (bbox)
+        delete bbox;
+
+    bbox = bb;
+    bbox->Translate(x, y);
+}
+
+//////////////////////////////////////////////////////////////////////////
+void Object::Translate(float dx, float dy, float dz)
+{
+    posX += dx;
+    posY += dy;
+    posZ += dz;
+
+    if (bbox)
+        bbox->Translate(dx, dy);
+}
+
+//////////////////////////////////////////////////////////////////////////
+void Object::MoveTo(float px, float py, float pz)
+{
+    posX = px;
+    posY = py;
+    posZ = pz;
+
+    if (bbox)
+        bbox->MoveTo(px, py);
+}
+
+//////////////////////////////////////////////////////////////////////////
+void Object::MoveTo(float px, float py)
+{
+    posX = px;
+    posY = py;
+
+    if (bbox)
+        bbox->MoveTo(px, py);
+}
+
+//////////////////////////////////////////////////////////////////////////
+void Object::OnCollision(Object* obj)
+{
+}
+
+//////////////////////////////////////////////////////////////////////////
+

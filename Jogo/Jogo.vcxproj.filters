@@ -45,14 +45,11 @@
     <ClCompile Include="Personagem.cpp">
       <Filter>Jogo\Personagem</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Jogo\Menu</Filter>
-    </ClCompile>
-    <ClCompile Include="Background_F1.cpp">
-      <Filter>Jogo\Fases</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Engine\Cenas</Filter>
+    </ClCompile>
+    <ClCompile Include="Geometry.cpp">
+      <Filter>Engine\Geometria</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -95,14 +92,14 @@
     <ClInclude Include="Personagem.h">
       <Filter>Jogo\Personagem</Filter>
     </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Jogo\Menu</Filter>
-    </ClInclude>
-    <ClInclude Include="Background_F1.h">
-      <Filter>Jogo\Fases</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>Engine\Cenas</Filter>
+    </ClInclude>
+    <ClInclude Include="Geometry.h">
+      <Filter>Engine\Geometria</Filter>
+    </ClInclude>
+    <ClInclude Include="Jogo.h">
+      <Filter>Jogo</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -157,14 +154,14 @@
     <Filter Include="Jogo\Personagem">
       <UniqueIdentifier>{62ba5744-630e-43ef-ac2e-41a61ab68fb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Jogo\Menu">
-      <UniqueIdentifier>{a75fcdcc-fa4a-4069-9ff8-1d038b1580e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Jogo\Fases">
       <UniqueIdentifier>{084ff758-0173-4c59-9bab-7a0380970935}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\Cenas">
       <UniqueIdentifier>{cab2a925-7765-42b4-a3b5-91c09ee7a5b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Geometria">
+      <UniqueIdentifier>{a13181bc-2fc5-4015-a19b-41639a133a59}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
