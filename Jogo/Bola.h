@@ -1,27 +1,29 @@
 //////////////////////////////////////////////////////////////////////////
 
-#ifndef JOGO_JOGADOR
-#define JOGO_JOGADOR
+#ifndef JOGO_BOLA
+#define JOGO_BOLA
 
 #include "Types.h"
 #include "Object.h"
+#include "Personagem.h"
 #include "Sprite.h"
 
 //////////////////////////////////////////////////////////////////////////
-class Jogador : public Object
+class Ball : public Object
 {
 private:
     Sprite* sprite;
+    Jogador* jogador;
 
 public:
+
+    bool lancada;
 
     float velX;
     float velY;
 
-    float CentroX;
-
-    Jogador();
-    ~Jogador();
+    Ball(Jogador* per);
+    ~Ball();
 
     void OnCollision(Object* obj);
     void Update();
@@ -29,10 +31,11 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-inline void Jogador::Draw()
+inline void Ball::Draw()
 {
     sprite->Draw(x, y, z);
 }
 
-//////////////////////////////////////////////////////////////////////////s
+//////////////////////////////////////////////////////////////////////////
+
 #endif

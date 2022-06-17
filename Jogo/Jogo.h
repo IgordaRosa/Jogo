@@ -1,6 +1,6 @@
 //////////////////////////////////////////////////////////////////////////
-#ifndef JOGO
-#define JOGO
+#ifndef JOGO_JOGO
+#define JOGO_JOGO
 
 #include "Engine.h"
 #include "Game.h"
@@ -8,12 +8,11 @@
 #include "Sprite.h"
 #include "Resources.h"
 
-//menu
-#include "Menu.h"
-
 //objetos
 #include "Scene.h"
 #include "Personagem.h"
+#include "Block.h"
+#include "Bola.h"
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -28,13 +27,18 @@ enum ObjTypes
 class Jogo : public Game
 {
 private:
-    //menu
     
     //lista de objetos
     static Scene* scene;
-    Personagem* personagem = nullptr;
+    Jogador* personagem = nullptr;
 
     //sprites
+    Sprite* Backg = nullptr;
+    Image* Tile1 = nullptr;
+    Image* Tile2 = nullptr;
+    Image* Tile3 = nullptr;
+    Image* Tile4 = nullptr;
+    Image* Tile5 = nullptr;
 
 public:
     void Init();

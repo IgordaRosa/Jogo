@@ -1,27 +1,22 @@
 //////////////////////////////////////////////////////////////////////////
 
-#ifndef JOGO_JOGADOR
-#define JOGO_JOGADOR
+#ifndef JOGO_BLOCK
+#define JOGO_BLOCK
 
 #include "Types.h"
 #include "Object.h"
 #include "Sprite.h"
 
 //////////////////////////////////////////////////////////////////////////
-class Jogador : public Object
+class Block : public Object
 {
 private:
     Sprite* sprite;
 
 public:
 
-    float velX;
-    float velY;
-
-    float CentroX;
-
-    Jogador();
-    ~Jogador();
+    Block(Image* s, float Xinit, float Yinit);
+    ~Block();
 
     void OnCollision(Object* obj);
     void Update();
@@ -29,10 +24,11 @@ public:
 };
 
 //////////////////////////////////////////////////////////////////////////
-inline void Jogador::Draw()
+inline void Block::Draw()
 {
-    sprite->Draw(x, y, z);
+    sprite->Draw(x, y, z, 2.0f);
 }
 
-//////////////////////////////////////////////////////////////////////////s
+//////////////////////////////////////////////////////////////////////////
+
 #endif

@@ -51,6 +51,12 @@
     <ClCompile Include="Geometry.cpp">
       <Filter>Engine\Geometria</Filter>
     </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>Jogo\Inimigos</Filter>
+    </ClCompile>
+    <ClCompile Include="Bola.cpp">
+      <Filter>Jogo\Bola</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -100,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="Jogo.h">
       <Filter>Jogo</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>Jogo\Inimigos</Filter>
+    </ClInclude>
+    <ClInclude Include="Bola.h">
+      <Filter>Jogo\Bola</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +174,12 @@
     </Filter>
     <Filter Include="Engine\Geometria">
       <UniqueIdentifier>{a13181bc-2fc5-4015-a19b-41639a133a59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo\Inimigos">
+      <UniqueIdentifier>{bc812858-a61b-4985-9872-29cc6c26b667}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo\Bola">
+      <UniqueIdentifier>{01d77c13-6434-42e0-b474-fcd2b3e64e11}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

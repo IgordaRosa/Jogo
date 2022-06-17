@@ -4,9 +4,10 @@
 #include "Jogo.h"
 
 //////////////////////////////////////////////////////////////////////////
-Personagem::Personagem()
+Jogador::Jogador()
 {
-    BBox(new Rect(0, 0, 199, 39));
+    sprite = new Sprite("Resources/Joguinho/Player.png");
+    BBox(new Rect(0, 0, float(sprite->Width())-1.0f, float(sprite->Height()) - 1.0f));
 
     // bounding box alternativa: experimente usar 
     // uma combinação de retângulos e círculos
@@ -28,7 +29,6 @@ Personagem::Personagem()
     //
     //bbox = mixed;
 
-    sprite = new Sprite("Resources/Joguinho/Player.png");
     MoveTo
     (
         float(window->CenterX() - (sprite->Width()/2.0f)), 
@@ -39,19 +39,19 @@ Personagem::Personagem()
     velX = 300.0f;
     velY = 150.0f;
 
-    state = STOPED;
+    CentroX = x + (sprite->Width() / 2.0f);
 
     this->type = PLAYER;
 }
 
 //////////////////////////////////////////////////////////////////////////
-Personagem::~Personagem()
+Jogador::~Jogador()
 {
     delete sprite;
 }
 
 //////////////////////////////////////////////////////////////////////////
-void Personagem::Update()
+void Jogador::Update()
 {
     if (window->KeyDown(VK_LEFT) and x > 5)
         Translate(-velX * gameTime, 0);
@@ -59,17 +59,12 @@ void Personagem::Update()
     if (window->KeyDown(VK_RIGHT) and x < (window->Width() - sprite->Width()))
         Translate(velX * gameTime, 0);
 
+    CentroX = x + (sprite->Width() / 2.0f);
 }
 
 //////////////////////////////////////////////////////////////////////////
-void Personagem::OnCollision(Object* obj)
+void Jogador::OnCollision(Object* obj)
 {
-    // bola colidiu com o player
-    if (obj->Type() == BALL)
-    {
-        /*Ball* ball = (Ball*)obj;
-        ball->velY = -ball->velY;*/
-    }
 }
 
 //////////////////////////////////////////////////////////////////////////
