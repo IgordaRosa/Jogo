@@ -22,32 +22,32 @@ void Jogo::Init()
 
     //adicionar objetos a lista
     personagem = new Jogador();
-    scene->Add(personagem, RECTANGLE_T);
-    scene->Add(new Ball(personagem), RECTANGLE_T);
+    scene->Add(personagem, MOVING);
+    scene->Add(new Ball(personagem), MOVING);
 
-    scene->Add(new Block(Tile1,-300, 25), RECTANGLE_T);
-    scene->Add(new Block(Tile2, -150, 25), RECTANGLE_T);
-    scene->Add(new Block(Tile3, 0, 25), RECTANGLE_T);
-    scene->Add(new Block(Tile4, 150, 25), RECTANGLE_T);
-    scene->Add(new Block(Tile5, 300, 25), RECTANGLE_T);
+    scene->Add(new Block(Tile1,-300, 25), STATIC);
+    scene->Add(new Block(Tile2, -150, 25), STATIC);
+    scene->Add(new Block(Tile3, 0, 25), STATIC);
+    scene->Add(new Block(Tile4, 150, 25), STATIC);
+    scene->Add(new Block(Tile5, 300, 25), STATIC);
 
-    scene->Add(new Block(Tile1, -300, 100), RECTANGLE_T);
-    scene->Add(new Block(Tile2, -150, 100), RECTANGLE_T);
-    scene->Add(new Block(Tile3, 0, 100), RECTANGLE_T);
-    scene->Add(new Block(Tile4, 150, 100), RECTANGLE_T);
-    scene->Add(new Block(Tile5, 300, 100), RECTANGLE_T);
+    scene->Add(new Block(Tile1, -300, 100), STATIC);
+    scene->Add(new Block(Tile2, -150, 100), STATIC);
+    scene->Add(new Block(Tile3, 0, 100), STATIC);
+    scene->Add(new Block(Tile4, 150, 100), STATIC);
+    scene->Add(new Block(Tile5, 300, 100), STATIC);
 
-    scene->Add(new Block(Tile1, -300, 175), RECTANGLE_T);
-    scene->Add(new Block(Tile2, -150, 175), RECTANGLE_T);
-    scene->Add(new Block(Tile3, 0, 175), RECTANGLE_T);
-    scene->Add(new Block(Tile4, 150, 175), RECTANGLE_T);
-    scene->Add(new Block(Tile5, 300, 175), RECTANGLE_T);
+    scene->Add(new Block(Tile1, -300, 175), STATIC);
+    scene->Add(new Block(Tile2, -150, 175), STATIC);
+    scene->Add(new Block(Tile3, 0, 175), STATIC);
+    scene->Add(new Block(Tile4, 150, 175), STATIC);
+    scene->Add(new Block(Tile5, 300, 175), STATIC);
 
-    scene->Add(new Block(Tile1, -300, 250), RECTANGLE_T);
-    scene->Add(new Block(Tile2, -150, 250), RECTANGLE_T);
-    scene->Add(new Block(Tile3, 0, 250), RECTANGLE_T);
-    scene->Add(new Block(Tile4, 150, 250), RECTANGLE_T);
-    scene->Add(new Block(Tile5, 300, 250), RECTANGLE_T);
+    scene->Add(new Block(Tile1, -300, 250), STATIC);
+    scene->Add(new Block(Tile2, -150, 250), STATIC);
+    scene->Add(new Block(Tile3, 0, 250), STATIC);
+    scene->Add(new Block(Tile4, 150, 250), STATIC);
+    scene->Add(new Block(Tile5, 300, 250), STATIC);
     
 }
 

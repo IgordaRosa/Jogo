@@ -113,6 +113,9 @@
     <ClInclude Include="Bola.h">
       <Filter>Jogo\Bola</Filter>
     </ClInclude>
+    <ClInclude Include="Colisores.h">
+      <Filter>Jogo\Colisores</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
@@ -180,6 +183,9 @@
     </Filter>
     <Filter Include="Jogo\Bola">
       <UniqueIdentifier>{01d77c13-6434-42e0-b474-fcd2b3e64e11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Jogo\Colisores">
+      <UniqueIdentifier>{1453fd65-9fcd-41c1-9e16-71cd1b392fb3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

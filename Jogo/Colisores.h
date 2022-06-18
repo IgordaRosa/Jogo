@@ -1,0 +1,14 @@
+//////////////////////////////////////////////////////////////////////////
+#ifndef JOGO_COLISSORES
+#define JOGO_COLISSORES
+
+enum ObjTypes
+{
+    PLAYER,                             // jogador
+    BALL,                               // bola
+    BLOCK                               // bloco
+};
+
+#endif
+
+//////////////////////////////////////////////////////////////////////////

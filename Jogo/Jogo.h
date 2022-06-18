@@ -8,6 +8,8 @@
 #include "Sprite.h"
 #include "Resources.h"
 
+#include "Colisores.h"
+
 //objetos
 #include "Scene.h"
 #include "Personagem.h"
@@ -15,21 +17,11 @@
 #include "Bola.h"
 
 //////////////////////////////////////////////////////////////////////////
-
-enum ObjTypes
-{
-    PLAYER,                             // jogador
-    BALL,                               // bola
-    BLOCK                               // bloco
-};
-
-//////////////////////////////////////////////////////////////////////////
 class Jogo : public Game
 {
 private:
     
-    //lista de objetos
-    static Scene* scene;
+    //objetos
     Jogador* personagem = nullptr;
 
     //sprites
@@ -41,6 +33,8 @@ private:
     Image* Tile5 = nullptr;
 
 public:
+    static Scene* scene;
+
     void Init();
     void Update();
     void Draw();

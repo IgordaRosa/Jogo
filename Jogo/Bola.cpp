@@ -1,6 +1,8 @@
 //////////////////////////////////////////////////////////////////////////
 
 #include "Bola.h"
+#include "Block.h"
+#include "Colisores.h"
 #include "Jogo.h"
 
 //////////////////////////////////////////////////////////////////////////
@@ -48,14 +50,25 @@ void Ball::Update()
         return;
     }
 
-    if (x <= 0)
+    if (x < 0)
+    {
+        MoveTo(0.0f,y);
         velX = -velX;
-    if (x >= window->Width() - (sprite->Width()/2.0f))
-        velX = -velX;
+    }
 
-    if (y <= 0)
+    if (x > window->Width() - (sprite->Width() / 2.0f))
+    {
+        MoveTo(window->Width() - (sprite->Width() / 2.0f), y);
+        velX = -velX;
+    }
+    
+    if (y < 0)
+    {
+        MoveTo(x, 0.0f);
         velY = -velY;
-    if (y >= window->Height() - (sprite->Height() / 2.0f))
+    }
+
+    if (y > window->Height() - (sprite->Height() / 2.0f))
     {
         lancada = false;
         velX = 200.0f;
@@ -73,6 +86,11 @@ void Ball::OnCollision(Object* obj)
     {
         velY = -velY;
     }
+    if (obj->Type() == BLOCK)
+    {
+        Jogo::scene->Delete(obj, STATIC);
+    }
+
 }
 
 //////////////////////////////////////////////////////////////////////////
